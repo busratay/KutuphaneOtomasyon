@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA44585D-67A0-418D-BA47-EEB3912B5108}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KutuphaneOtomasyon</RootNamespace>
+    <AssemblyName>KutuphaneOtomasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kitap.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giris.Designer.cs">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategoriler.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kayit.Designer.cs">
+      <DependentUpon>Kayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitaplar.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanicilar.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneGorevliDetay.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneGorevlisiPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KutuphaneGorevlisiPanel.Designer.cs">
+      <DependentUpon>KutuphaneGorevlisiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modeller.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modeller.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modeller.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modeller.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modeller.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OduncIslemleri.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OduncTalepleri.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Roller.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tema.cs" />
+    <Compile Include="TemaUygulama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeDetay.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UyePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyePanel.Designer.cs">
+      <DependentUpon>UyePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yayinevleri.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Yazarlar.cs">
+      <DependentUpon>Modeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YoneticiPanel.Designer.cs">
+      <DependentUpon>YoneticiPanel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Giris.resx">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kayit.resx">
+      <DependentUpon>Kayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KutuphaneGorevlisiPanel.resx">
+      <DependentUpon>KutuphaneGorevlisiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TemaUygulama.resx">
+      <DependentUpon>TemaUygulama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyePanel.resx">
+      <DependentUpon>UyePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YoneticiPanel.resx">
+      <DependentUpon>YoneticiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Modeller.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modeller.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modeller.edmx.diagram">
+      <DependentUpon>Modeller.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kitap.ico" />
+    <Content Include="Modeller.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modeller.edmx</DependentUpon>
+      <LastGenOutput>Modeller.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modeller.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modeller.edmx</DependentUpon>
+      <LastGenOutput>Modeller.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\sun2.png" />
+    <None Include="Resources\moon.png" />
+    <None Include="Resources\sun.png" />
+    <None Include="Resources\kitap.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\para.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\saat.png" />
+    <None Include="Resources\personel.png" />
+    <None Include="Resources\kütüphane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
