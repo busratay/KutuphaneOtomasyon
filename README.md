@@ -88,6 +88,14 @@ Proje, **DB-First** yaklaşımı ile geliştirilmiş ve aşağıdaki tablolarla 
 ### 📊 Raporlama
 - `Raporlar`: Okuma istatistikleri, gecikme bilgileri, en çok okunanlar vb.
 
+## 🗃️ Veritabanı Dosyası
+
+📁 `Database/KutuphaneOtomasyon.bak`
+
+Bu dosyayı SQL Server Management Studio (SSMS) ile geri yükleyebilirsiniz:
+
+> SSMS → Veritabanları → Sağ tık → Geri Yükle (Restore) → Cihaz → `.bak` dosyasını seç → Tamam
+
 ---
 ## 📄 Lisans
 
