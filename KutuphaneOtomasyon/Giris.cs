@@ -63,10 +63,21 @@ namespace KutuphaneOtomasyon
                     break;
                 case "Kütüphaneci":
                     var gorevliDetay = db.KutuphaneGorevliDetay
-                          .FirstOrDefault(g => g.KullaniciID == kullanici.KullaniciID);
-                    bool ilkGiris = gorevliDetay?.IlkGiris == true;
-                    var kutuphanePanel = new KutuphaneGorevlisiPanel(kullanici, ilkGiris);
-                    kutuphanePanel.Show();
+                    .FirstOrDefault(g => g.KullaniciID == kullanici.KullaniciID);
+                    
+                    if (gorevliDetay == null)
+                    {
+                        gorevliDetay = new KutuphaneGorevliDetay
+                        {
+                            KullaniciID = kullanici.KullaniciID,
+                            IlkGiris = true 
+                        };
+                        db.KutuphaneGorevliDetay.Add(gorevliDetay);
+                        db.SaveChanges();
+                    }
+
+                    bool ilkGirisDurumu = gorevliDetay.IlkGiris;
+                    new KutuphaneGorevlisiPanel(kullanici, ilkGirisDurumu).Show();
                     break;
                 case "Üye":
                     new UyePanel(kullanici).Show();

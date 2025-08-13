@@ -277,12 +277,17 @@ namespace KutuphaneOtomasyon
                     k.Email,
                     k.Sifre,
                     k.Telefon,
-                    AktifMi = k.Aktif ? "Aktif" : "Pasif"
-                })
+                    AktifMi = k.Aktif ? "Aktif" : "Pasif",
+                    IlkGiris = db.KutuphaneGorevliDetay
+               .Where(d => d.KullaniciID == k.KullaniciID)
+               .Select(d => d.IlkGiris)
+               .FirstOrDefault() == false
+        })
                 .ToList();
 
             dgvKutuphaneciler.DataSource = kutuphaneciler;
             dgvKutuphaneciler.Columns["KullaniciID"].Visible = false;
+            dgvKutuphaneciler.Columns["IlkGiris"].Visible = false;
             dgvKutuphaneciler.Columns["Sifre"].Visible = false;
             dgvKutuphaneciler.Columns["K_Ad"].HeaderText = "Ad";
             dgvKutuphaneciler.Columns["Soyad"].HeaderText = "Soyad";
@@ -323,6 +328,12 @@ namespace KutuphaneOtomasyon
             yeniKullanici.Roller.Add(kutuphaneciRol);
             db.Kullanicilar.Add(yeniKullanici);
 
+            var yeniGorevliDetay = new KutuphaneGorevliDetay
+            {
+                KullaniciID = yeniKullanici.KullaniciID,
+                IlkGiris = false
+            };
+            db.KutuphaneGorevliDetay.Add(yeniGorevliDetay);
             db.Raporlar.Add(new Raporlar
             {
                 KullaniciID = aktifYonetici.KullaniciID,
@@ -392,6 +403,10 @@ namespace KutuphaneOtomasyon
             }
             string adSoyad = $"{kullanici.K_Ad} {kullanici.Soyad}";
             db.Kullanicilar.Remove(kullanici);
+            var gorevliDetay = db.KutuphaneGorevliDetay.FirstOrDefault(g => g.KullaniciID == secilenID);
+            if (gorevliDetay != null)
+            db.KutuphaneGorevliDetay.Remove(gorevliDetay);
+
 
             db.Raporlar.Add(new Raporlar
             {

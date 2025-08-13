@@ -17,7 +17,7 @@ namespace KutuphaneOtomasyon
         public bool IlkGiris;
         KutuphaneEntities db = new KutuphaneEntities();
 
-        public KutuphaneGorevlisiPanel(Kullanicilar kullanici, bool ilkGiris = false)
+        public KutuphaneGorevlisiPanel(Kullanicilar kullanici, bool ilkGiris)
         {
             InitializeComponent();
             aktifKutuphaneci = kullanici;
@@ -35,6 +35,38 @@ namespace KutuphaneOtomasyon
             GecmisTalepleriListele();
             FiltreleIadeler();
             VerilenKitaplariYukle();
+
+            var detay = db.KutuphaneGorevliDetay
+                    .FirstOrDefault(d => d.KullaniciID == aktifKutuphaneci.KullaniciID);
+
+            if (detay == null)
+            {
+              
+                detay = new KutuphaneGorevliDetay
+                {
+                    KullaniciID = aktifKutuphaneci.KullaniciID,
+                    IlkGiris = false
+                };
+                db.KutuphaneGorevliDetay.Add(detay);
+                db.SaveChanges();
+            }
+
+            
+            if (!detay.IlkGiris)
+            {
+                MessageBox.Show("İlk girişte şifrenizi değiştirmeniz gerekiyor!", "İlk Giriş",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                pnlProfilim.Visible = true;
+
+                
+                detay.IlkGiris = true;
+                db.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show($"Hoş geldiniz {aktifKutuphaneci.K_Ad}!", "Giriş Başarılı",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void KutuphaneGorevlisiPanel_Load(object sender, EventArgs e)
         {
@@ -46,13 +78,6 @@ namespace KutuphaneOtomasyon
                 return;
             }
 
-            if (IlkGiris)
-            {
-                pnlProfilim.Visible = true;
-                MessageBox.Show("İlk girişte şifrenizi değiştirmeniz gerekiyor!");
-            }
-
-            MessageBox.Show($"Hoş geldiniz {aktifKutuphaneci.K_Ad}!", "Giriş Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtEskiSifre.UseSystemPasswordChar = true;
             txtYeniSifre.UseSystemPasswordChar = true;
 
@@ -248,10 +273,12 @@ namespace KutuphaneOtomasyon
                 aktifKutuphaneci.Sifre = yeniSifre;
                 guncellemeVar = true;
 
-                var kutuphaneDetay = db.KutuphaneGorevliDetay.FirstOrDefault(k => k.KullaniciID == aktifKutuphaneci.KullaniciID);
-                if (kutuphaneDetay != null && kutuphaneDetay.IlkGiris == true)
+                var detay = db.KutuphaneGorevliDetay
+            .FirstOrDefault(d => d.KullaniciID == aktifKutuphaneci.KullaniciID);
+
+                if (detay != null && !detay.IlkGiris)  
                 {
-                    kutuphaneDetay.IlkGiris = false;
+                    detay.IlkGiris = true;
                     db.SaveChanges();
                 }
             }
