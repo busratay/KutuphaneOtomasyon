@@ -87,7 +87,22 @@ Proje, **DB-First** yaklaşımı ile geliştirilmiş ve aşağıdaki tablolarla 
 
 ### 📊 Raporlama
 - `Raporlar`: Okuma istatistikleri, gecikme bilgileri, en çok okunanlar vb.
+## 📸 Ekran Görüntüleri
 
+### Login
+![Login Ekranı](screenshots/login.png)
+
+### Register
+![Register Ekranı](screenshots/register.png)
+
+### Yönetici Paneli
+![Yönetici Paneli](screenshots/yonetici.png)
+
+### Kütüphane Görevlisi Paneli
+![Kütüphane Görevlisi](screenshots/kutuphanegorevlisi.png)
+
+### Üye Paneli
+![Üye Paneli](screenshots/uye.png)
 ## 🗃️ Veritabanı Dosyası
 
 📁 `Database/KutuphaneOtomasyon.bak`
