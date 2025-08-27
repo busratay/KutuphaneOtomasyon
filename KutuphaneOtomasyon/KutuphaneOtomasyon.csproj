@@ -210,6 +210,11 @@
       <DependentUpon>Modeller.edmx</DependentUpon>
       <LastGenOutput>Modeller.cs</LastGenOutput>
     </Content>
+    <Content Include="screenshots\kutuphanegorevlisi.png" />
+    <Content Include="screenshots\login.png" />
+    <Content Include="screenshots\register.png" />
+    <Content Include="screenshots\uye.png" />
+    <Content Include="screenshots\yonetici.png" />
     <None Include="Resources\picture.png" />
     <None Include="Resources\sun2.png" />
     <None Include="Resources\moon.png" />
@@ -225,6 +230,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
