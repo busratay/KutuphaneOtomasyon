@@ -90,19 +90,19 @@ Proje, **DB-First** yaklaşımı ile geliştirilmiş ve aşağıdaki tablolarla 
 ## 📸 Ekran Görüntüleri
 
 ### Login
-![Login Ekranı](screenshots/login.png)
+![Login Ekranı](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/login.png)
 
 ### Register
-![Register Ekranı](screenshots/register.png)
+![Register Ekranı](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/register.png)
 
 ### Yönetici Paneli
-![Yönetici Paneli](screenshots/yonetici.png)
+![Yönetici Paneli](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/yonetici.png)
 
 ### Kütüphane Görevlisi Paneli
 ![Kütüphane Görevlisi](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/kutuphanegorevlisi.png)
 
 ### Üye Paneli
-![Üye Paneli](screenshots/uye.png)
+![Üye Paneli](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/uye.png)
 ## 🗃️ Veritabanı Dosyası
 
 📁 `Database/KutuphaneOtomasyon.bak`
