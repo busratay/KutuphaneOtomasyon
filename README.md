@@ -99,7 +99,7 @@ Proje, **DB-First** yaklaşımı ile geliştirilmiş ve aşağıdaki tablolarla 
 ![Yönetici Paneli](screenshots/yonetici.png)
 
 ### Kütüphane Görevlisi Paneli
-![Kütüphane Görevlisi](screenshots/kutuphanegorevlisi.png)
+![Kütüphane Görevlisi](https://github.com/busratay/KutuphaneOtomasyon/blob/master/KutuphaneOtomasyon/screenshots/kutuphanegorevlisi.png)
 
 ### Üye Paneli
 ![Üye Paneli](screenshots/uye.png)
